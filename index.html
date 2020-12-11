@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="curriculum vitae Roberto Aguiar Alam">
+	<meta name="keywords" content="curriculum,php,jquery,android,HTML,CSS,XML,JavaScript">
+	<meta name="author" content="Roberto Alam">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+    <title>CURRICULUM</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/metisMenu.css" rel="stylesheet">
+        <link href="css/sb-admin-2.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/materialdesignicons.css" rel="stylesheet">        
+		<link href="css/devicon.min.css" rel="stylesheet" >
+        <link href="css/style.css" rel="stylesheet">
+		<link href="css/print.css" rel="stylesheet" media="print" />
+        <!-- ########## JAVASCRIPT ########## -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <style>
+
+        </style>
+	</head>
+	<body>
+    <div class="container">
+		<header>
+			<div class="row">
+				<div class="col-lg-12" style="text-align:center">
+					<h1>CURRICULUM VITAE</h1>
+				</div>
+			</div>
+			<hr>
+			<div id="foto">
+				<img src="img/beto.jpg" class="img-thumbnail" style="width:150px;float:left;margin:5px 15px 15px 15px">
+			</div>
+			<div id="sobre"></div>
+		</header>
+		<br claer="all">
+		<br claer="all">
+		
+		<h1 class="secoes"><i class="mdi mdi-database"></i>BASE DE CONHECIMENTO</h1>		
+		<div id="divHabilidade">
+			<ul></ul>
+		</div>
+
+		<br clear="all">
+		<br clear="all">
+		
+		<h1 class="secoes"><i class="fa fa-graduation-cap"></i> CURSOS/GRADUAÇÃO </h1>
+		<div id="divGraduacao">
+			<table id="tabelaGraduacao">
+				<thead>
+					<tr>
+						<th>PERÍODO</th>
+						<th>CARGA<br>HORARIA</th>
+						<th>INSTITUIÇÃO</th>
+						<th>TITULAÇÃO</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>			
+		</div>
+
+		<br clear="all">
+		<h1 class="secoes"><i class="glyphicon glyphicon-share-alt"></i> EXPERIÊNCIA </h1>	
+		<div id="divExperiencia"></div>
+		<table id="tabelaExperiencia"><tbody></tbody></table>
+
+		<br clear="all">
+
+		<h1 class="secoes"><i class="glyphicon glyphicon-map-marker"></i> CONTATO</h1>
+		<div id="divContato"></div>
+		<table id="tabelaContato"><tbody></tbody></table>
+		<br clear="all">
+		
+
+	</div>
+		<script>
+		$(document).ready(function() {
+			function ajaxGenericoGet(url, variaveis) {
+                var tmp = [];
+                $.ajax({
+                    'async': false,
+                    'type': "GET",
+                    'global': false,
+                    'dataType': 'html',
+                    'url': url,
+                    'data': variaveis,
+                    'beforeSend': function () {
+                        //abrirCortina();
+                    },
+                    'success': function (data) {
+                        return tmp = jQuery.parseJSON(data)
+                    }, 'error': function (jqXHR, exception) {
+                        //console.log('ERRO');
+                        var msg = '';
+                        if (jqXHR.status === 0) {
+                            msg = 'Not connect.\n Verify Network.';
+                        } else if (jqXHR.status == 404) {
+                            msg = 'Requested page not found. [404]';
+                        } else if (jqXHR.status == 500) {
+                            msg = 'Internal Server Error [500].';
+                        } else if (exception === 'parsererror') {
+                            msg = 'Requested JSON parse failed.';
+                        } else if (exception === 'timeout') {
+                            msg = 'Time out error.';
+                        } else if (exception === 'abort') {
+                            msg = 'Ajax request aborted.';
+                        } else {
+                            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                        }
+                        alert(msg)
+                    }
+                });
+                return tmp;
+            }
+
+            let loadObjeto = ajaxGenericoGet('dados.json');
+            loadObjeto = loadObjeto.dados;
+			//console.log(loadObjeto[0])
+            let nome = loadObjeto[0].nome;
+            let sobre = loadObjeto[0].sobre;
+            let imagem = loadObjeto[0].imagem;
+            let habilidade = loadObjeto[0].habilidade;
+            let graduacao = loadObjeto[0].graduacao;
+            let experiencia = loadObjeto[0].experiencia;
+            let contato = loadObjeto[0].contato;
+
+            //CARREGAR HTML
+            let habilidades = "";
+            for(var k = 0;k < habilidade.length;k++){
+            	habilidades += "\n\
+					<li class='col-lg-3 col-md-3 col-sm-4 col-xs-6' title='"+habilidade[k].descricao+"'>\n\
+						<label>\n\
+							<i class='"+habilidade[k].icone+"'></i>\n\
+							<span>"+habilidade[k].nome+"</span>\n\
+						</label>\n\
+					</li>";
+            }
+
+			let graduacoes = "";
+            for(var k = 0;k < graduacao.length;k++){
+            	graduacoes += "\n\
+            	<tr'>\n\
+            		<td>"+graduacao[k].periodo+"</td>\n\
+            		<td>"+graduacao[k].tempo+"</td>\n\
+            		<td>"+graduacao[k].instituicao+"</td>\n\
+            		<td>"+graduacao[k].titulacao+"</td>\n\
+        		</tr>";
+            }
+
+			let experiencias = "";
+            for(var k = 0;k < experiencia.length;k++){
+            	let responsabilidades = "";
+            	for(var j = 0;j < experiencia[k].responsabilidades.length;j++){
+            		responsabilidades += "<li>"+experiencia[k].responsabilidades[j]+"</li>";
+        		}
+            	experiencias += "\n\
+            	<tr'>\n\
+            		<td>"+experiencia[k].periodo+"</td>\n\
+            		<td>"+experiencia[k].instituicao+"</td>\n\
+            		<td>"+experiencia[k].titulacao+"</td>\n\
+            		<td><ul>"+responsabilidades+"</ul></td>\n\
+        		</tr>";
+            }
+
+			let contatos = "";
+            for(var k = 0;k < contato.length;k++){
+            	contatos += "\n\
+					<tr>\n\
+						<td rel='icone'><i class='"+contato[k].icone+"'></td>\n\
+						<td rel='valor'>"+contato[k].valor+"</td>\n\
+					</tr>";
+            }
+
+            $("#sobre").html(sobre)
+            $("#divHabilidade ul").html(habilidades)
+            $("#tabelaGraduacao tbody").html(graduacoes)
+            $("#tabelaExperiencia tbody").html(experiencias)
+            $("#tabelaContato tbody").html(contatos)
+
+			carregarHabilidades();
+			function carregarHabilidades(){
+				$('.progress-bar').each(function(){
+					console.log( $(this).siblings() )
+					
+					var valor  = $(this).data('value');
+					var classe = "";
+					if(valor >= 70){
+						classe = "progress-bar-success";
+					}else if( (valor >= 31) && (valor <= 69) ) {
+						classe = "progress-bar-warning";
+					}else{
+						classe = "progress-bar-danger";					
+					}
+					$(this).css({'width':valor+'%'})
+					$(this).siblings().css({'width':valor+'%'})
+					$(this).addClass(classe)
+				});
+			};
+		});
+		</script>	
+	</body>
+</html>
