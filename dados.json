@@ -30,6 +30,7 @@
 			{"nome":"SQLServer","nivel":70,"icone":"fa fa-database","descricao":"Banco de dados Microsoft"}
 		],
 		"graduacao":[
+			{"periodo":"11/2020-02/2021","instituicao":"IGTI","titulacao":"Bootcam Desenvolvedor Full Stack","tempo":"148 horas"},
 			{"periodo":"07/2020-09/2020","instituicao":"IGTI","titulacao":"Bootcam Desenvolvedor Mobile Apps","tempo":"148 horas"},
 			{"periodo":"2020","instituicao":"OmniStack","titulacao":"Semana OmniStack 11º","tempo":"10 horas"},
 			{"periodo":"2020","instituicao":"Unipampa","titulacao":"Curso de Introdução a Segurança da Informação e de Sistemas","tempo":"28 horas"},
