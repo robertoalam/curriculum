@@ -13,6 +13,7 @@
 			{"nome":"Dart","nivel":30,"icone":"fa fa-google","descricao":"Dart"},
 			{"nome":"Docker","nivel":25,"icone":"cbp-ig-icon devicon-docker-plain"},
 			{"nome":"Ionic","nivel":35,"icone":"cbp-ig-icon devicon-android-plain","descricao":"Framework Mobile"},
+			{"nome":"Firebase","nivel":30,"icone":"mdi mdi-fire adjust-dashboard-icon adjust-dashboard-firebase-icon","descricao":"Banco de dados"},
 			{"nome":"Flutter","nivel":30,"icone":"fa fa-android","descricao":"Flutter"},
 			{"nome":"GIT","nivel":65,"icone":"cbp-ig-icon devicon-git-plain","descricao":"Ferramenta para versionamento"},
 			{"nome":"HTML5","nivel":85,"icone":"cbp-ig-icon devicon-html5-plain"},
@@ -20,6 +21,7 @@
 			{"nome":"jQuery","nivel":70,"icone":"cbp-ig-icon devicon-jquery-plain","descricao":"Biblioteca javaScript"},
 			{"nome":"Laravel","nivel":70,"icone":"cbp-ig-icon devicon-laravel-plain","descricao":"Framework PHP"},
 			{"nome":"Linux/Debian","nivel":50,"icone":"cbp-ig-icon devicon-linux-plain","descricao":"sistema operacional"},
+			{"nome":"MongoDB","nivel":30,"icone":"cbp-ig-icon devicon-mongodb-plain","descricao":"Banco de dados"},
 			{"nome":"MySQL","nivel":70,"icone":"cbp-ig-icon devicon-mysql-plain","descricao":"Banco de dados open source"},
 			{"nome":"nodeJS","nivel":15,"icone":"cbp-ig-icon devicon-nodejs-plain"},
 			{"nome":"PHP","nivel":90,"icone":"cbp-ig-icon devicon-php-plain","descricao":"Linguagem de programação web"},
@@ -28,9 +30,11 @@
 			{"nome":"PWA","nivel":20,"icone":"cbp-ig-icon devicon-javascript-plain"},
 			{"nome":"Virtual Box","nivel":55,"icone":"cbp-ig-icon devicon-docker-plain"},
 			{"nome":"SQLServer","nivel":70,"icone":"fa fa-database","descricao":"Banco de dados Microsoft"}
+			
 		],
 		"graduacao":[
-			{"periodo":"07/2020-09/2020","instituicao":"IGTI","titulacao":"Bootcam Desenvolvedor Mobile Apps","tempo":"148 horas"},
+			{"periodo":"11/2020-02/2021","instituicao":"IGTI","titulacao":"Bootcamp Desenvolvedor Full Stack","tempo":"148 horas"},
+			{"periodo":"07/2020-09/2020","instituicao":"IGTI","titulacao":"Bootcamp Desenvolvedor Mobile Apps","tempo":"148 horas"},
 			{"periodo":"2020","instituicao":"OmniStack","titulacao":"Semana OmniStack 11º","tempo":"10 horas"},
 			{"periodo":"2020","instituicao":"Unipampa","titulacao":"Curso de Introdução a Segurança da Informação e de Sistemas","tempo":"28 horas"},
 			{"periodo":"07/2017-07/2018","instituicao":"UNOPAR","titulacao":"Pós Graduação em Tecnologias Para Aplicações Web","tempo":"360 horas"},

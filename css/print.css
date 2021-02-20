@@ -30,11 +30,11 @@ h1{font-size:26pt !important; font-weight:bold;}
 .tabelaHabilidade > tbody > tr td:nth-child(2) { text-align: center;font-style: italic; }
 .tabelaHabilidade > tbody > tr td:nth-child(3) {font-size: 130%;padding:2px 3px;}			
 
-#tabelaGraduacao {border-collapse: collapse;}
-#tabelaGraduacao > thead > tr > th{text-align: center}
+#tabelaGraduacao {border-collapse: collapse;color:red}
+#tabelaGraduacao > thead > tr > th{text-align: center;}
 #tabelaGraduacao > tbody > tr td{border-bottom:1px solid #eee;}
 #tabelaGraduacao > tbody > tr td:nth-child(1) {text-align: center;}
-#tabelaGraduacao > tbody > tr td:nth-child(2) {text-align: right;padding:2px 5px;}
+#tabelaGraduacao > tbody > tr td:nth-child(2) {text-align: right;padding:2px 5px;font-size: 90%;}
 #tabelaGraduacao > tbody > tr td:nth-child(3) {text-align: left;padding:2px 5px;}
 
 #tabelaExperiencia {border-collapse: collapse;}
